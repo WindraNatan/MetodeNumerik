@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Simulasi Konveyor Adaptif — RK4 & Midpoint | Metode Numerik",
+  title: "Simulasi Konveyor Adaptif: RK4 & Midpoint | Metode Numerik",
   description:
     "Dashboard interaktif untuk memvisualisasikan simulasi Metode Numerik (Runge-Kutta Orde 4 & Midpoint) pada sistem konveyor adaptif motor DC. Ubah parameter K dan T secara real-time.",
   keywords: [

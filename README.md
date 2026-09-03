@@ -1,6 +1,6 @@
 # Numerical Methods Simulator (RK4 & Midpoint)
 
-A numerical simulation web app for solving and visualizing ordinary differential equations (ODE) using 4th-Order Runge-Kutta and Midpoint methods.
+A numerical simulation web application for solving and visualizing ordinary differential equations (ODE) using 4th-Order Runge-Kutta and Midpoint methods.
 
 **Live Demo:** [https://metode-numerik-nine.vercel.app](https://metode-numerik-nine.vercel.app)
 
@@ -13,8 +13,10 @@ This project simulates arrival-rate differential equations based on discrete sen
 - Runge-Kutta 4th Order (RK4) ODE numerical solver
 - 2nd-Order Midpoint (RK2) comparative simulation
 - PWM lookup with Zero-Order Hold (ZOH) and Linear Interpolation
+- In-memory real-time computation for instant slider updates
+- Shared mathematical simulation engine with input hardening and DoS limits
 - Chart visualization using Chart.js and react-chartjs-2
-- Server-side computation via Next.js App Router API routes (`/api/simulate/rk4`)
+- Next.js App Router API route (`/api/simulate/rk4`) for programmatic access
 
 ## Project Structure
 
@@ -22,10 +24,17 @@ This project simulates arrival-rate differential equations based on discrete sen
 MetodeNumerik/
 ├── app/
 │   ├── api/simulate/rk4/
-│   │   └── route.js          # API route for RK4, Midpoint, and interpolation logic
-│   ├── layout.js             # Root layout
-│   ├── page.js               # Main page with input forms and charts
-│   └── globals.css           # Global styles
+│   │   └── route.js          # Hardened API route for RK4 and Midpoint computation
+│   ├── layout.js             # Root layout with metadata
+│   ├── page.js               # Dashboard page with input controls and charts
+│   └── globals.css           # Clean CSS styling
+├── components/
+│   ├── ParamInput.js         # Slider and numerical input component
+│   └── StatCard.js           # Metric summary card component
+├── data/
+│   └── experiments.js        # Static sensor experiment datasets
+├── lib/
+│   └── simulation.js         # Core ODE solvers and Arduino mapping engine
 ├── public/                   # Static assets
 ├── next.config.mjs           # Next.js configuration
 └── package.json              # Dependencies (Next.js 16, React 19, Chart.js)
@@ -67,7 +76,7 @@ npm run start
 - ODE numerical approximation
 - RK4 reduction to Simpson's 1/3 Rule
 - Zero-Order Hold vs Linear Interpolation
-- Next.js 16 App Router and API route handlers
+- Next.js App Router and API route handlers
 - Client-side chart rendering with Chart.js
 
 ## License
